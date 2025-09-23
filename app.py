@@ -16,7 +16,6 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 app.config['SECRET_KEY'] = 'your_super_secret_key'  # Needed for flash messages
 
 db = SQLAlchemy(app)
-
 # --- Database Models ---
 
 class Movie(db.Model):
