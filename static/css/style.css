@@ -1,0 +1,69 @@
+/* General Body Styles */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: #121212; /* Dark background */
+}
+
+main {
+    flex: 1;
+}
+
+/* Movie Card Styling */
+.movie-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.movie-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+.movie-card .card-img-top {
+    aspect-ratio: 2 / 3; /* Common movie poster aspect ratio */
+    object-fit: cover;
+}
+
+.movie-card .card-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* Star Rating System */
+.star-rating {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    font-size: 2.5rem; /* Larger stars */
+}
+
+.star-rating input[type="radio"] {
+    display: none; /* Hide the actual radio buttons */
+}
+
+.star-rating label {
+    color: #444; /* Unselected star color */
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+/* When a star is checked, color it and all previous stars */
+.star-rating input[type="radio"]:checked ~ label {
+    color: #ffc107; /* Bootstrap warning/gold color */
+}
+
+/* Hover effect: color the hovered star and all previous ones */
+.star-rating label:hover,
+.star-rating label:hover ~ label {
+    color: #ffc107;
+}
+
+/* Add this to the end of your style.css file */
+.list-thumbnail-img {
+    width: 50px;
+    height: auto;
+    border-radius: 4px;
+    object-fit: cover; /* Ensures the image covers the space without distortion */
+}
