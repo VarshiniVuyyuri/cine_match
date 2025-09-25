@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+
+{% block title %}{{ movie.title }} - CineMatch{% endblock %}
+
+{% block content %}
+<div class="container mt-5">
+    <a href="{{ url_for('index') }}" class="btn btn-outline-secondary mb-4">
+        <i class="bi bi-arrow-left"></i> Back to Movies
+    </a>
+
+    <div class="row">
+        <div class="col-md-4">
+            <img src="{{ movie.poster_url }}" class="img-fluid rounded shadow" alt="{{ movie.title }} Poster">
+        </div>
+        <div class="col-md-8">
+            <h1 class="display-5">{{ movie.title }}</h1>
+            <p class="lead text-muted">{{ movie.release_year }} • {{ movie.genre }}</p>
+            <hr>
+            <p>{{ movie.description }}</p>
+
+            <div class="d-flex align-items-center mb-4">
+                <h4 class="me-3">Average Rating:</h4>
+                <div class="fs-3 fw-bold">
+                    <i class="bi bi-star-fill text-warning"></i>
+                    <span id="avg-rating">{{ movie.average_rating() }}</span>
+                </div>
+            </div>
+            
+            <h4>Your Rating:</h4>
+            <div class="star-rating mb-4" data-movie-id="{{ movie.id }}">
+                {% for i in range(5, 0, -1) %}
+                    <input type="radio" id="star{{i}}" name="rating" value="{{i}}" {% if user_rating and user_rating.rating == i %}checked{% endif %}>
+                    <label for="star{{i}}" title="{{i}} stars"><i class="bi bi-star-fill"></i></label>
+                {% endfor %}
+            </div>
+
+            <button class="btn btn-danger btn-lg add-to-watchlist" data-movie-id="{{ movie.id }}">
+                <i class="bi bi-bookmark-plus-fill"></i> Add to Watchlist
+            </button>
+        </div>
+    </div>
+</div>
+
+<div class="toast-container position-fixed bottom-0 end-0 p-3">
+  <div id="notificationToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+    <div class="toast-header">
+      <strong class="me-auto" id="toast-title">Notification</strong>
+      <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+    </div>
+    <div class="toast-body" id="toast-body">
+      Message goes here.
+    </div>
+  </div>
+</div>
+{% endblock %}
