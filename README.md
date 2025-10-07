@@ -46,7 +46,7 @@ cinematch/
 │   ├── top_rated.html  # Page for the highest-rated movies
 │   └── watchlist.html  # User's personal watchlist page
 └── README.md           # Project documentation
-
+```
 ##  How to Run the Project
 
 ### 1. Prerequisites
