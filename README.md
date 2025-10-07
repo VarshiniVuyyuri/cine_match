@@ -24,23 +24,23 @@ CineMatch is a web application built with Flask that helps users discover movies
 The project is organized with a standard Flask application structure:
 
 cinematch/
-├── .flaskenv           # Environment variables for Flask
-├── app.py              # Main Flask application file (routes, models, logic)
-├── requirements.txt    # Python package dependencies
-├── static/             # Contains static assets
+├── .flaskenv           
+├── app.py              
+├── requirements.txt    
+├── static/             
 │   ├── css/
-│   │   └── style.css   # Custom stylesheets
+│   │   └── style.css   
 │   ├── js/
-│   │   └── script.js   # Custom JavaScript for interactivity
-│   └── images/         # For storing static images like posters
-├── templates/          # Contains HTML templates rendered by Flask
-│   ├── base.html       # Base layout with navbar and footer
-│   ├── index.html      # Main movie browsing page
-│   ├── movie_detail.html # Page for a single movie's details
-│   ├── recommendations.html # Page to display recommendations
-│   ├── top_rated.html  # Page for the highest-rated movies
-│   └── watchlist.html  # User's personal watchlist page
-└── README.md           # Project documentation
+│   │   └── script.js   
+│   └── images/          
+├── templates/           
+│   ├── base.html        
+│   ├── index.html      
+│   ├── movie_detail.html 
+│   ├── recommendations.html 
+│   ├── top_rated.html  
+│   └── watchlist.html  
+└── README.md           
 
 
 ##  How to Run the Project
